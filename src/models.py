@@ -41,7 +41,7 @@ class Like(Base):
     __tablename__ = 'like'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
-    post_id = Column(Integer, ForeignKey('post.id'), unique=True)
+    post_id = Column(Integer, ForeignKey('post.id'), unique=False)
     user = relationship(User)
 
     def to_dict(self):
